@@ -1,0 +1,17 @@
+[
+  {
+    "userName": "TEST USER",
+    "password": "Pa$$w0rd",
+    "userProfile": "lowlevel"
+  },
+  {
+    "userName": "TEST USER 2",
+    "password": "Pa$$w0rd123",
+    "userProfile": "midlevel"
+  },
+  {
+    "userName": "TEST USER 3",
+    "password": "Pa$$w0rd456",
+    "userProfile": "highlevel"
+  }
+]
