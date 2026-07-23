@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/API/">
+    <Project Path="JwtUserLogin/JwtUserLogin.API.csproj" />
+  </Folder>
+  <Folder Name="/Client/">
+    <Project Path="JwtUserLogin.client/JwtUserLogin.client.csproj" />
+  </Folder>
+</Solution>
