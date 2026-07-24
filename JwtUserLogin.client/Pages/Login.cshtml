@@ -1,0 +1,37 @@
+﻿@page
+@model JwtUserLogin.client.Pages.LoginModel
+@{
+}
+
+<div class="row justify-content-center">
+    <div class="col-11 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+        <div class="card shadow-lg border-0 rounded-4 border-top border-primary border-5">
+            <div class="card-body p-4 p-sm-5">
+                <div class="text-center mb-4 mt-2">
+                    <h2 class="fw-bolder mb-1">Welcome!</h2>
+                    <p class="text-muted small">Please enter your credentials to access</p>
+                </div>
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3 fw-medium text-center"></div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Email" class="form-control bg-body-tertiary border-0" autocomplete="off" />
+                        <label asp-for="Email" class="text-muted"></label>
+                        <span asp-validation-for="Email" class="text-danger small fw-semibold"></span>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input asp-for="Password" class="form-control bg-body-tertiary border-0" autocomplete="off" type="password" />
+                        <label asp-for="Password" class="text-muted"></label>
+                        <span asp-validation-for="Password" class="text-danger small fw-semibold"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg w-100 py-3 mb-2 fw-bold shadow-sm rounded-3">
+                        Log in
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

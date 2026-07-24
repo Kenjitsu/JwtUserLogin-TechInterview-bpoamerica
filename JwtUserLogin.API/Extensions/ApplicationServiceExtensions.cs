@@ -18,7 +18,16 @@ public static class ApplicationServiceExtensions
 
         services.AddScoped<ISecurityService, SecurityService>();
 
-        services.AddCors();
+        services.AddCors(options =>
+        {
+            options.AddPolicy("AllowClientApp", policy =>
+            {
+                policy.WithOrigins("https://localhost:7020")
+                      .AllowAnyHeader()
+                      .AllowAnyMethod()
+                      .AllowCredentials();
+            });
+        });
 
         return services;
     }

@@ -1,7 +1,9 @@
+using JwtUserLogin.client.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddApplicationServices();
 
 var app = builder.Build();
 
@@ -17,6 +19,7 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapStaticAssets();
