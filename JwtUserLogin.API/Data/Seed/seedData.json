@@ -1,16 +1,16 @@
 [
   {
-    "userName": "TEST USER",
+    "userName": "user@test.com",
     "password": "Pa$$w0rd",
     "userProfile": "lowlevel"
   },
   {
-    "userName": "TEST USER 2",
+    "userName": "user2@test.com",
     "password": "Pa$$w0rd123",
     "userProfile": "midlevel"
   },
   {
-    "userName": "TEST USER 3",
+    "userName": "user3@test.com",
     "password": "Pa$$w0rd456",
     "userProfile": "highlevel"
   }

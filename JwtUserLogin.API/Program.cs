@@ -1,6 +1,7 @@
 using JwtUserLogin.API.Data;
 using JwtUserLogin.API.Data.Seed;
 using JwtUserLogin.API.Extensions;
+using JwtUserLogin.API.Extensions.Exceptions;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,8 +12,11 @@ builder.Services.AddControllers();
 builder.Services.AddApplicationServices(builder.Configuration);
 
 builder.Services.AddOpenApi();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+app.UseGlobalExceptionHandler();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

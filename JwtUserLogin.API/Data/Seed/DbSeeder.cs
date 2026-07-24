@@ -32,7 +32,7 @@ public static class DbSeeder
             await context.Users.AddAsync(new AppUser
             {
                 UserNameHash = SHA256.HashData(Encoding.UTF8.GetBytes(u.UserName)),
-                UserPasswordHash = SHA256.HashData(Encoding.UTF8.GetBytes(u.UserPassword)),
+                UserPasswordHash = SHA256.HashData(Encoding.UTF8.GetBytes(u.Password)),
                 UserName = u.UserName,
                 UserProfile = u.UserProfile,
                 UserAgent = "Client user agent",
@@ -47,6 +47,6 @@ public static class DbSeeder
 public record UserSeedDto
 {
     public string UserName { get; set; } = "";
-    public string UserPassword { get; set; } = "";
+    public string Password { get; set; } = "";
     public string UserProfile { get; set; } = "";
 }
