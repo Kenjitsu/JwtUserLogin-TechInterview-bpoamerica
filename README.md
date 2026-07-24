@@ -17,10 +17,10 @@ La solución está compuesta por:
 Todo el diseño de interfaz se desarrolló de manera responsiva y moderna
 utilizando **Bootstrap 5**.
 
-## Tecnologías Utilizadas
+## Tecnologías utilizadas
 
--   **Backend:** ASP.NET Core Web API (C#), EF Core, SQL Lite, JWT, Cookies
--   **Frontend:** ASP.NET Core Razor Pages (C#), Bootstrap 5, HTML
+-   **Backend:** ASP.NET Core Web API (C#, .NET 10), EF Core, SQL Lite, JWT, Cookies
+-   **Frontend:** ASP.NET Core Razor Pages (C#, .NET 10), Bootstrap 5, HTML
 
 ## Paso a paso para la ejecución
 
