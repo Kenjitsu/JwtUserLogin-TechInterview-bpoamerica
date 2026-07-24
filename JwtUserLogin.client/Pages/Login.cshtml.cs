@@ -48,8 +48,8 @@ public class LoginModel : PageModel
 
         try
         {
-            var loginPayload = BuildLoginRequest();
-            var (isSuccess, userResponse, jwtToken) = await ExecuteLoginAsync(loginPayload);
+            var loginRequest = BuildLoginRequest();
+            var (isSuccess, userResponse, jwtToken) = await ExecuteLoginAsync(loginRequest);
 
             if (!isSuccess || userResponse == null)
             {
@@ -70,21 +70,21 @@ public class LoginModel : PageModel
         }
     }
 
-    private object BuildLoginRequest()
+    private LoginRequest BuildLoginRequest()
     {
-        return new
+        return new LoginRequest
         {
-            userName = ComputeSha256(Email),
-            userPassword = ComputeSha256(Password),
-            clientIp = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "127.0.0.1",
-            userAgent = Request.Headers.UserAgent.ToString()
+            UserName = ComputeSha256(Email),
+            UserPassword = ComputeSha256(Password),
+            ClientIp = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "127.0.0.1",
+            UserAgent = Request.Headers.UserAgent.ToString()
         };
     }
 
-    private async Task<(bool IsSuccess, LoginResponse? User, string JwtToken)> ExecuteLoginAsync(object payload)
+    private async Task<(bool IsSuccess, LoginResponse? User, string JwtToken)> ExecuteLoginAsync(LoginRequest loginRequest)
     {
         var client = _httpClientFactory.CreateClient(ApiClientName);
-        var response = await client.PostAsJsonAsync(LoginEndpoint, payload);
+        var response = await client.PostAsJsonAsync(LoginEndpoint, loginRequest);
 
         if (!response.IsSuccessStatusCode)
             return (false, null, string.Empty);
